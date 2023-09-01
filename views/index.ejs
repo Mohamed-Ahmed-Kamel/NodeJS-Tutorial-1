@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <!-- head -->
+  <%- include('./partials/head') %>
+
+  <body id="body">
+    <!-- header -->
+    <%- include('./partials/header') %>
+
+    <main id="main">
+      <section>
+        <h1>All Articles</h1>
+
+        <div class="parent-of-articles">
+          <% arrArticles.forEach((item)=>{ %>
+          <article>
+            <h2><%= item.title %></h2>
+            <p>
+              <%= item.summary%>
+              <a class="btn" href="/all-articles/<%= item.id %>">show more</a>
+            </p>
+          </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

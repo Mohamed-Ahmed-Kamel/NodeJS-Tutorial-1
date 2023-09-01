@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+
+
+            <h1>
+                <%= OBJartile.title %>
+            </h1>
+
+            <br>
+            <br>
+
+            <p>
+                <%= OBJartile.body %>
+            </p>
+
+            <button data-idLink="<%= OBJartile._id %>" class="create">
+                Delete
+            </button>
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <%- include('./partials/footer') %>
+
+
+
+
+
+
+
+
+                <script>
+
+                    const button = document.querySelector(".create");
+                    const buttonAtt = button.getAttribute("data-idLink");
+
+                    button.addEventListener('click', () => {
+
+                        fetch(`/all-articles/${buttonAtt}`, { method: 'DELETE' })
+                        .then((res) => res.json())
+                        .then((data) => window.location.href=data.index)
+                        .catch((err) => {console.log(err);});
+                            
+                    })
+
+
+
+
+                </script>
+
+    </body>
+
+</html>
