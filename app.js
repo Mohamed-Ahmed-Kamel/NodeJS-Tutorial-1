@@ -6,7 +6,7 @@ const port = process.env.PORT || 5050;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true })); // to post
+app.use(express.urlencoded({ extended: true })); // for post
 
 // for auto refresh
 const path = require("path");
