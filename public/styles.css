@@ -118,7 +118,7 @@ h1 {
 }
 
 section {
-  margin-bottom: 25px;
+  margin: 200px;
   box-shadow: 5px 5px 25px rgb(179, 172, 172);
   width: 97%;
   margin-left: auto;
